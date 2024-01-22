@@ -49,7 +49,7 @@ def train(model, train_dataset, val_dataset, epochs, batch_size, early_stopping_
         
         if val_loss < best_loss:
             best_loss = val_loss
-            best_model = copy.deepcopy(model.to('cpu'))
+            best_model = copy.deepcopy(model)
             current_patience = 0
         else:
             current_patience += 1
